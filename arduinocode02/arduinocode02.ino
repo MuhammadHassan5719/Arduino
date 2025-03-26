@@ -1,19 +1,11 @@
 
 
-
-//DHT library
-#include <Wire.h>
-
 #define LGFX_USE_V1
 #include <LovyanGFX.hpp>
-// LVGL
-// https://github.com/lvgl/lvgl
+
 #include <lvgl.h>
 #include "ui02.h"
 
-
-#define DHTPIN 21
-#define DHTTYPE DHT11
 
 
 /*----------------------------lCD CONFIG PART--------------------------*/
@@ -135,8 +127,7 @@ void my_touchpad_read(lv_indev_drv_t *indev_driver, lv_indev_data_t *data) {
 void setup() {
   initDisplay();  
   Serial.begin(115200);
-  pinMode(11,OUTPUT);
-  digitalWrite(11,LOW);
+
   lv_init();
   lv_disp_draw_buf_init(&draw_buf, buf, NULL, screenWidth * 10);
 
